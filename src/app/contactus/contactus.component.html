@@ -1,0 +1,44 @@
+
+<app-navbar></app-navbar>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="row justify-content-center">
+		<div class="col-md-4 text-left bg-white rounded shadow-lg mb-5 mt-5  py-3">
+			<div><h3><strong>Contact us</strong></h3></div><br>
+			<form (ngSubmit) = "onsubmit(signupform)" #signupform = "ngForm">
+				<div class="form-row">
+					<div class="form-group col-12">
+						<label for="fname">Name</label>
+						<input type="text" class="form-control" id="fname" name="Ufname" ngModel required  #fname="ngModel">
+						<small *ngIf = '!fname.valid &&  fname.touched' class="text-danger">Please Enter Your name</small>
+					</div>	
+				</div>
+
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" class="form-control" id="email" placeholder="john@abc.com" name="Umail" ngModel required email #email="ngModel">
+					<small *ngIf = '!email.valid &&  email.touched' class="text-danger">Please Enter Valid Email</small>
+				</div>
+
+				<div class="form-group">
+					<label>Your Message</label>
+					<textarea class="text-left" name="text" rows="4" cols="47"></textarea>
+
+				</div>
+				
+				<button type="submit" class="btn btn-primary float-right" [disabled] = '!signupform.valid'>Submit</button>
+			</form>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+	
+</body>
+</html>
+<app-footer></app-footer>
+
